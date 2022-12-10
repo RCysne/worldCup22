@@ -6,18 +6,41 @@
 
 :root {
   --card-color-primary: #f7dd43;
-  --card-border-color: #746615;
+  --card-title-border-color: #746615;
+  --card-bg-color: #1d1c19;
+  --bg: url(/assets/bg-yellow.svg);
 }
+
+
+/* Classe criada para facilitar a troca de cores adicionando apenas a classe no body */
+body.blue {
+  --card-color-primary: #338af3;
+  --card-title-border-color: #338af3;
+  --card-bg-color: #202024;
+  --bg: url(/assets/bg-blue.svg);
+
+}
+
+body.green {
+  --card-color-primary: #047c3f;
+  --card-title-border-color: #047c3f;
+  --card-bg-color: #1a1f1b;
+  --bg: url(/assets/bg-green.svg);
+
+} 
 
 ul {
   list-style: none;
 }
 
 body {
-  background: #121214;
-  background-image: url(/assets/bg.svg);
-  background-position-x: center;
-  background-position-y: -715px;
+  /* background: #121214;
+  background-image: var(--bg);
+  background-repeat: no-repeat;
+  background-position: top center; Y top X center
+  background-size: cover; */
+
+  background: #121214 var(--bg) no-repeat top center/cover;
 }
 
 body * {
@@ -27,7 +50,8 @@ body * {
 #app {
   /* border: 1px solid red; */
   width: fit-content;
-  margin: 52px auto;
+  margin: auto;
+  padding-top: 52px;
 }
 
 header {
@@ -45,7 +69,7 @@ header {
 .card {
   padding: 32px 23px;
   text-align: center;
-  background-color: #1D1C19;
+  background-color: var(--card-bg-color);
   border-radius: 6px;
   box-shadow: 0 2.5px 0px var(--card-color-primary);
 }
@@ -55,12 +79,12 @@ header {
   justify-content: center;
   gap: 16px;
   padding: 8px 16px;
-  border: 1px solid var(--card-border-color);
+  border: 1px solid var(--card-title-border-color);
   border-radius: 6px;
   width: fit-content;
   margin-inline: auto;
   margin-bottom: 53px;
-  color: var(--card-color-primary);
+  color: #f7dd43;
 }
 
 .card h2 span {
